@@ -287,65 +287,7 @@ include 'database.php';
   </div>
 
 
-		<div id="headerwrap">
-    <div align='center' class="container">
-    <br>
-    <div id="offers" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#offers" data-slide-to="0" class="active"></li>
-      <li data-target="#offers" data-slide-to="1"></li>
-      <li data-target="#offers" data-slide-to="2"></li>
-      <li data-target="#offers" data-slide-to="3"></li>
-      <li data-target="#offers" data-slide-to="4"></li>
-    </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-
-    <?php
-    include 'database.php';
-
-    $sql = ("SELECT * FROM offers");
-
-    $result = mysqli_query($conn,$sql);
-
-        while($row = mysqli_fetch_array($result)){
-            $title = $row['title'];
-            $image = $row['image'];
-            $img_name = $row['img_name'];
-            $id = $row['id'];
-
-            if($id == '1'){
-                echo"<div class='item active'>
-                    <img src=\"$image$img_name\" alt='E-Cart' width='auto' height='400'>
-                    <br><br>
-                    </div>";
-            }
-
-            else{
-            echo"<div class='item'>
-                    <img src=\"$image$img_name\" alt='E-Cart' width='auto' height='400'>
-                    <br><br>
-                    </div>";
-            }
-        }
-    mysqli_close($conn);
-?>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#offers" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left " aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#offers" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right " aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-    </div>
-    </div>
-</div><!-- /container -->
-</div>
 
 <div id = "searchResult" class="row">
 </div>
